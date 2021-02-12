@@ -2,3 +2,16 @@
 
 # gitpod-dotnet-play
 Playing with dotnet on GitPod.
+
+
+Create self contained executable including .NET runtime in a single file:
+
+```bash
+dotnet publish -c Release -r linux-x64 --self-contained=true -p:PublishSingleFile=true
+```
+
+Create single file executable excluding .NET runtime but including required dlls:
+
+```bash
+dotnet publish -c Release -r linux-x64 --self-contained=false -p:PublishSingleFile=true
+```
